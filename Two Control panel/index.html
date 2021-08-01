@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Control panel</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="engine">
+
+<form action="1.php" method="post">
+
+
+  <h1 class="headers"> CONTROL Arm </h1>
+<br>
+
+
+<div class="A">
+  <h1>Motor 1 </h1>
+    <input type="range" min="0" max="180" value="0" id="Motor" name="sl1" >
+    <div id="val"> </div>
+</div>
+
+
+<div class="A">
+      <h1>Motor 2 </h1>
+        <input type="range" min="0" max="180" value="0" id="Motor2" name="sl2"  >
+        <div id="val2"></div>
+</div>
+
+
+<div class="A">
+      <h1>Motor 3 </h1>
+        <input type="range" min="0"max="180" value="0" id="Motor3" name="sl3" >
+            <div id="val3"></div>
+   </div>
+      <div class="A">
+            <h1>Motor 4 </h1>
+            <input type="range" min="0"max="180" value="0" id="Motor4"  name="sl4" >
+            <div id="val4"></div>
+
+      </div>
+      <div class="A">
+            <h1>Motor 5 </h1>
+            <input type="range" min="0"max="180" value="0" id="Motor5"  name="sl5" >
+            <div id="val5"></div>
+  </div>
+
+      <div class="A">
+            <h1>Motor 6 </h1>
+            <input type="range" min="0"max="180" value="0" id="Motor6"  name="sl6" >
+            <div id="val6"></div>
+     </div>
+     <input type="submit"name = "save" value="SAVE" class="bu1_save">
+</form>
+
+<form action="2.php" method="post">
+   <input type="submit"value="RUN" name="on" class="bu2_on" >
+</form>
+
+
+<form action="Controlcar/Control car.html" method="POST">
+<input type="submit"value="ControlCar " name="next" class="ControlCar" >
+</form>
+ 
+</div>
+</div>
+
+  </body>
+
+  <script src="js.js"></script>
+
+  <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "d8f1ec59-9a97-45db-99f0-c855e9084494", // The ID of this integration.
+        region: "eu-gb", // The region your integration is hosted in.
+        serviceInstanceID: "ae7a4803-9e42-4aa0-9f75-ea33ca5f6431", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+  
+</html>
+
+
+
+
+<!-- webgl -->
+<head>
+  <script type="text/javascript">
+    const total = 7;
+    const minOpacity = 0.1;
+    const maxOpacity = 0.5;
+    const colorFloor = 190;
+
+    window.onload = () => {
+      for (let i = 0; i < total; i++){
+        const opacity = minOpacity+(maxOpacity-minOpacity)*((total-i)/total);
+        const red = colorFloor + Math.floor(Math.random()*(255-colorFloor));
+        const green = colorFloor + Math.floor(Math.random()*(255-colorFloor));
+        const blue = colorFloor + Math.floor(Math.random()*(255-colorFloor));
+        const style = `style="background-color: rgba(${red}, ${green}, ${blue}, ${opacity})"`;
+        document.querySelectorAll('.hand:empty').forEach(n => {
+          n.innerHTML = `<div class="hand rotate-minute" ${style}></div><div class="hand rotate-second" ${style}></div>`;
+        });
+      }
+
+      var css = document.createElement('style');
+      css.type = 'text/css';
+      var hours = new Date().getHours()%12;
+      var minutes = new Date().getMinutes();
+      var seconds = new Date().getSeconds()+(60*minutes)+(60*60*hours);
+      var styles = `.hand {animation-delay: ${seconds*-1}s;}`;
+
+      if (css.styleSheet) css.styleSheet.cssText = styles;
+      else css.appendChild(document.createTextNode(styles));
+
+      document.getElementsByTagName("head")[0].appendChild(css);
+    };
+  </script>
+  <style>
+    @keyframes rotating {
+      from {
+        transform: rotate(180deg);
+      }
+      to {
+        transform: rotate(540deg);
+      }
+    }
+
+    .rotate-second {
+      animation: rotating 60.083449s linear infinite; /*(60*60*12)/((60*12)-1)*/
+    }
+
+    .rotate-minute {
+      animation: rotating 3927.27273s linear infinite; /*(60*60*12)/(12-1)*/
+    }
+
+    .rotate-hour {
+      animation: rotating 43200s linear infinite;
+    }
+
+    .hand {
+      display: inline-block;
+      transform-origin: 50% 100%;
+      width: 1px;
+      height: 20vmin;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      background-color: white;
+      border-radius: 100px;
+    }
+
+    .hour {
+      position: fixed;
+      background-color: white;
+      left: 50%;
+      bottom: 50%;
+      width: 2px;
+      height: 10vmin;
+      transform-origin: 50% 50%;
+    }
+
+    body {
+      background-color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <div class="hand rotate-hour hour">
+    <div class="hand rotate-minute"></div>
+    <div class="hand rotate-second"></div>
+  </div>
+</body>
+
+
+

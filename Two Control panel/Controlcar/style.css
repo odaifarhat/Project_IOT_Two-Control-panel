@@ -1,0 +1,56 @@
+.image {
+    background: rgb(0, 0, 0);
+    margin: auto;
+    width: 1400px;
+    height: 800px;
+    position: relative;
+}
+
+.image .caption {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    left: 300px;
+    bottom: 320px;
+    top: 25%;
+    left: 30%;
+    padding: 2%;
+}
+
+.image .Button {
+    position: absolute;
+    padding: 2%;
+    left: 300px;
+    bottom: -330px;
+    border: none;
+    border-radius: 20%;
+}
+
+.stop {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.forward:hover {
+    background-color: rgb(240, 225, 25);
+    cursor: pointer;
+}
+
+.left:hover {
+    background-color: rgb(219, 176, 35);
+    cursor: pointer;
+}
+
+.stop:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.right:hover {
+    background-color: rgb(219, 176, 35);
+    cursor: pointer;
+}
+
+.backward:hover {
+    background-color: rgb(240, 225, 25);
+    cursor: pointer;
+}
