@@ -1,6 +1,8 @@
 # Project_IOT_Two-Control-panel
 Robot Control Panel a simple control panel for robotics.
+
 Two Control panel, Slider Arm and car control.
+
 A page has been created to control six engines with the inclusion of the corner number and also create a page to control the car, The two pages were merged together,A database was created for them and a chat bot was created.
 Using The language:  html , css , js , SQL , php , webgl , IBM Watson plugin.
 
